@@ -183,7 +183,7 @@ h1 {
 
 
 
-/* portfolio page */
+/* cms admin page */
 
 .portfolio-page {
     display: flex;
@@ -281,7 +281,7 @@ h1 {
 }
 
 
-.modal-bg, .modal2-bg {
+.modal-bg, .modal2-bg, .wcs-modal-bg, .pd-modal-bg{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -291,7 +291,7 @@ h1 {
 }
 
 
-.portfoliopage-modal, .portfoliopage-modal2 {
+.portfoliopage-modal, .portfoliopage-modal2, .wcs-modal, .pd-modal {
     padding: 20px 50px;
     background-color: rgb(255, 255, 255);
     width: 50%;
@@ -303,6 +303,16 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+h3 {
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 30px;
+}
+
+textarea {
+    color: var(--black) !important;
 }
 
 
@@ -456,7 +466,100 @@ textarea {
     max-height: fit-content;
     cursor: pointer;
 }
-/* portfolio page end */
+
+
+
+.categories {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.products-category-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 200px;
+}
+
+.products-category-list a {
+    display: block;
+    width: fit-content;
+    border: 2px solid var(--white);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 20px;
+}
+.products-category-list a:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.p-category {
+    padding: 50px;
+}
+
+.products-subheading {
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--grey);
+    text-align: center;
+}
+
+.back-btn {
+    display: block;
+    margin: 20px 0 50px 0;
+    color: var(--white);
+    font-style: italic;
+}
+
+.p-category .add-content-btn {
+    padding: 10px 20px;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+
+.what-client-says, .product-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    height: 30px;
+    padding: 0  10px;
+    background-color: var(--white);
+    color: var(--black);
+    cursor: pointer;
+    width: fit-content;
+}
+
+.what-client-says {
+    transform: translate(-50%, -130%);
+}
+
+.product-details {
+    transform: translate(-50%, -0%);
+}
+/* cms admin pages combined end */
+
+
+
 
 
 

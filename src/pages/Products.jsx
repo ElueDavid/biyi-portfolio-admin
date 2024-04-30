@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import biyidp from "../images/biyid.png";
 import pcimage from "../images/Component 40.png";
+import { Link } from 'react-router-dom';
 
 export default function Products() {
   const navigate = useNavigate(); 
@@ -11,27 +12,6 @@ export default function Products() {
   const [modalActive, setModalActive] = useState(false);
   const [modal2Active, setModal2Active] = useState(false);
 
-  const handleAddContentClick = () => {
-    setModalActive(true);
-    setModal2Active(false); // Deactivate modal2 if active
-  };
-
-  const handlePCNameClick = () => {
-    setModal2Active(true);
-    setModalActive(false); // Deactivate modal if active
-  };
-
-  const handleModalClick = (e) => {
-    if (e.target.classList.contains('modal-bg') || e.target.classList.contains('ppm-form')) {
-      setModalActive(false);
-    }
-  };
-
-  const handleModal2Click = (e) => {
-    if (e.target.classList.contains('modal2-bg') || e.target.classList.contains('ppm-form2')) {
-      setModal2Active(false);
-    }
-  };
 
   return (
     <div className='portfolio-page'>
@@ -51,22 +31,20 @@ export default function Products() {
         </section>
       </div>
       <main>
-        <div className="add-content-btn" onClick={handleAddContentClick}>
-          + add content
-        </div>
-        <input type="search" placeholder='search content' className='search-input' />
-        <div className="portfolio-contents">
-          <div className="portfolio-content">
-            <figure className='pc-image'>
-              <img src={pcimage} alt="" />
-            </figure>
-            <h4 className="pc-text-name" onClick={handlePCNameClick}>Ignormania</h4>
-            <span className="cancel-pc-item">X</span>
+        <div className="categories">
+          <h1 className='products-subheading'>
+            Products Categories
+          </h1>
+          <div className="products-category-list">
+            <Link to="/Allproducts">All</Link>
+            <Link to="/Ebooks">eBooks</Link>
+            <Link to="/Servvices">Service as a product</Link>
+            <Link to="/Solutions">Product solutions </Link>
+            <Link to="/Ecourses">E-courses</Link>
           </div>
-          {/* Add more portfolio content */}
         </div>
       </main>
-      {modalActive && (
+      {/* {modalActive && (
         <div className="modal-bg" onClick={handleModalClick}>
           <div className="portfoliopage-modal">
             <form action="" className='ppm-form'>
@@ -91,7 +69,7 @@ export default function Products() {
             </form>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

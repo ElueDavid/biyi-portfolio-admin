@@ -74,6 +74,8 @@ export default function Lightpages() {
               <div className="ppm-upload">
                 <input type="file" name="" id="" className='ppmu' />
               </div>
+              <br />
+              <textarea name="" id="" cols="30" rows="10" placeholder='enter content description...'></textarea>
               <button type="submit">Publish</button>
             </form>
           </div>
@@ -87,6 +89,8 @@ export default function Lightpages() {
               <div className="ppm-upload">
                 <input type="file" name="" id="" className='ppmu' />
               </div>
+              <br />
+              <textarea name="" id="" cols="30" rows="10" placeholder='edit content description...'></textarea>
               <button type="submit">submit</button>
             </form>
           </div>
