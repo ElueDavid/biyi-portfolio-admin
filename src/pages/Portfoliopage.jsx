@@ -11,6 +11,8 @@ export default function Portfoliopage() {
 
   const [modalActive, setModalActive] = useState(false);
   const [modal2Active, setModal2Active] = useState(false);
+  const [isActivedel, setIsActivedel] = useState(false);
+  const [fileSections, setFileSections] = useState([{}]);
 
   const handleAddContentClick = () => {
     setModalActive(true);
@@ -34,48 +36,12 @@ export default function Portfoliopage() {
     }
   };
 
-  // Function to handle adding software
-  const handleAddSoftwareClick = () => {
-    const softwareInput = document.querySelector('.sftw-input');
-    const softwareText = softwareInput.value.trim();
-    if (softwareText) {
-      const softwareList = document.querySelector('.sftw-second-part');
-      const newSoftware = document.createElement('span');
-      newSoftware.classList.add('software');
-      newSoftware.innerHTML = `
-        <p class='software-text'>${softwareText}</p>
-        <img src=${cancel_icon} alt='' class='sftw-cancel' onclick='removeSoftware(this)'/>
-      `;
-      softwareList.appendChild(newSoftware);
-      softwareInput.value = ''; // Clear input after adding
-    }
+  const addFileSection = () => {
+    setFileSections([...fileSections, {}]);
   };
 
-  // Function to handle adding skill
-  const handleAddSkillClick = () => {
-    const skillInput = document.querySelector('.skill-input');
-    const skillText = skillInput.value.trim();
-    if (skillText) {
-      const skillList = document.querySelector('.skill-second-part');
-      const newSkill = document.createElement('span');
-      newSkill.classList.add('skill');
-      newSkill.innerHTML = `
-        <p class='skill-text'>${skillText}</p>
-        <img src=${cancel_icon} alt='' class='skill-cancel' onclick='removeSkill(this)'/>
-      `;
-      skillList.appendChild(newSkill);
-      skillInput.value = ''; // Clear input after adding
-    }
-  };
-
-  // Function to remove software span
-  window.removeSoftware = (element) => {
-    element.parentNode.remove();
-  };
-
-  // Function to remove skill span
-  window.removeSkill = (element) => {
-    element.parentNode.remove();
+  const removeFileSection = () => {
+    setFileSections(fileSections.slice(0, -1));
   };
 
   return (
@@ -106,7 +72,7 @@ export default function Portfoliopage() {
               <img src={pcimage} alt="" />
             </figure>
             <h4 className="pc-text-name" onClick={handlePCNameClick}>Ignormania</h4>
-            <span className="cancel-pc-item">X</span>
+            <span className="cancel-pc-item" onClick={() => setIsActivedel(true)}>X</span>
           </div>
           {/* Add more portfolio content */}
         </div>
@@ -115,40 +81,58 @@ export default function Portfoliopage() {
         <div className="modal-bg" onClick={handleModalClick}>
           <div className="portfoliopage-modal">
             <form action="" className='ppm-form'>
-              <input type="text" placeholder='Enter Content title ' />
-              <input type="text" placeholder='Enter Content type'/>
-              <input type="text" placeholder='Client/Brand'/>
-              <input type="text" placeholder='Role'/>
-
-              <div className="listing-space">
-                <div className="sftw-first-part">
-                  <input type="text" placeholder='Enter software' className='sftw-input'/>
-                  <span className='sftw-add-soft-btn' onClick={handleAddSoftwareClick}>
-                    add software +
-                  </span>
-                </div>
-                <div className="sftw-second-part">
-                  {/* Software spans will be dynamically added here */}
-                </div>
+              <div className="form-subheading">
+                <h2>Outer Page</h2>
+                <span className="fs-line"></span>
               </div>
-
-              <div className="listing-space2">
-                <div className="skill-first-part">
-                  <input type="text" placeholder='Enter skill' className='skill-input'/>
-                  <span className='skill-add-soft-btn' onClick={handleAddSkillClick}>
-                    add skill +
-                  </span>
+              <section className="form-input-sec">
+                <input type="text" placeholder='Title'/>
+                <div className='file-section'>
+                  <p>Upload Desktop visual Cover</p>
+                  <input type="file" />
                 </div>
-                <div className="skill-second-part">
-                  {/* Skill spans will be dynamically added here */}
+                <div className='file-section'>
+                  <p>Upload desktop banner visual</p>
+                  <input type="file" />
                 </div>
+                <input type="text" placeholder='Alt text'/>
+              </section>
+              <select name="" id="" className='portfolio-select'>
+                <option value="" disabled selected hidden>Portfolio type</option>
+                <option value="">Product Design</option>
+                <option value="">Brand identitity & strategy</option>
+              </select>
+              <div className="form-subheading">
+                <h2>Inner Page</h2>
+                <span className="fs-line"></span>
               </div>
-
-              <textarea name="" id="" cols="30" rows="10" placeholder='what is the mission?'></textarea>
-              <div className="ppm-upload">
-                <input type="file" name="" id="" className='ppmu' />
+              <section className="form-input-sec">
+                <div className='file-section'>
+                  <p>Upload desktop inner banner</p>
+                  <input type="file" />
+                </div>
+                <input type="text" placeholder='Headline'/>
+                <input type="text" placeholder='Enter content'/>
+                <section className='section-container'>
+                  {fileSections.map((_, index) => (
+                    <div key={index} className='file-section'>
+                      <p>Upload desktop inner visual</p>
+                      <input type="file" />
+                    </div>
+                  ))}
+                  <div className="manipulation-btns">
+                    <span className="mb-1" onClick={addFileSection}>add</span>
+                    <span className="mb-2" onClick={removeFileSection}>remove</span>
+                  </div>
+                </section>
+                <input type="text" placeholder='Alt text'/>
+                <input type="text" placeholder='button title'/>
+                <input type="text" placeholder='button link'/>
+              </section>
+              <div className="form-btns">
+                <button type="reset" onClick={() => setIsActivedel(true)}>Delete</button>
+                <button type="submit">Publish</button>
               </div>
-              <button type="submit">Publish</button>
             </form>
           </div>
         </div>
@@ -157,44 +141,56 @@ export default function Portfoliopage() {
         <div className="modal2-bg" onClick={handleModal2Click}>
           <div className="portfoliopage-modal2">
             <form action="" className="ppm-form2">
-            <input type="text" placeholder='Edit Content title ' />
-              <input type="text" placeholder='Edit Content type'/>
-              <input type="text" placeholder='Client/Brand'/>
-              <input type="text" placeholder='Role'/>
-
-              <div className="listing-space">
-                <div className="sftw-first-part">
-                  <input type="text" placeholder='Edit software' className='sftw-input'/>
-                  <span className='sftw-add-soft-btn' onClick={handleAddSoftwareClick}>
-                    add software +
-                  </span>
-                </div>
-                <div className="sftw-second-part">
-                  {/* Software spans will be dynamically added here */}
-                </div>
+              <div className="form-subheading">
+                <h2>Outer Page</h2>
+                <span className="fs-line"></span>
               </div>
-
-              <div className="listing-space2">
-                <div className="skill-first-part">
-                  <input type="text" placeholder='Edit skill' className='skill-input'/>
-                  <span className='skill-add-soft-btn' onClick={handleAddSkillClick}>
-                    add skill +
-                  </span>
+              <section className="form-input-sec">
+                <input type="text" placeholder='Edit Title'/>
+                <div className='file-section'>
+                  <p>Edit Desktop visual banner</p>
+                  <input type="file" />
                 </div>
-                <div className="skill-second-part">
-                  {/* Skill spans will be dynamically added here */}
+                <div className='file-section'>
+                  <p>Edit Desktop visual Cover</p>
+                  <input type="file" />
                 </div>
+                <input type="text" placeholder='Edit Alt text'/>
+              </section>
+              <div className="form-subheading">
+                <h2>Inner Page</h2>
+                <span className="fs-line"></span>
               </div>
-
-              <textarea name="" id="" cols="30" rows="10" placeholder='what is the mission?'></textarea>
-              <div className="ppm-upload">
-                <input type="file" name="" id="" className='ppmu' />
+              <section className="form-input-sec">
+                <div className='file-section'>
+                  <p>Edit desktop inner banner</p>
+                  <input type="file" />
+                </div>
+                <div className='file-section'>
+                  <p>Edit desktop inner visual</p>
+                  <input type="file" />
+                </div>
+                <input type="text" placeholder='Edit content'/>
+                <input type="text" placeholder='Edit Alt text'/>
+                <input type="text" placeholder='Edit Headline'/>
+                <input type="text" placeholder='Edit button title'/>
+                <input type="text" placeholder='Edit button link'/>
+              </section>
+              <div className="form-btns">
+                <button type="reset" onClick={() => setIsActivedel(true)}>Delete</button>
+                <button type="submit">Update</button>
               </div>
-              <button type="submit">submit</button>
             </form>
           </div>
         </div>
       )}
+      <div className={`delete-modal-bg ${isActivedel ? 'active' : ''}`}>
+        <h1>Sure you want to delete content?</h1>
+        <div className="dm-btns">
+          <span className='dm-btn1' onClick={() => setIsActivedel(false)}>Yes</span>
+          <span className='dm-btn2' onClick={() => setIsActivedel(false)}>No</span>
+        </div>
+      </div>
     </div>
   );
 }

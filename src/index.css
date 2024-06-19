@@ -114,7 +114,7 @@ body{
     height: 100vh;
     position: sticky;
     top: 0px;
-    background-color: rgb(162, 162, 162);
+    background-color: white;
 }
 
 .dp-space {
@@ -287,7 +287,9 @@ h1 {
     align-items: center;
     position: fixed;
     inset: 0px;
+    max-height: 100vh;
     background-color: rgba(128, 128, 128, 0.603);
+    /* overflow-y: scroll; */
 }
 
 
@@ -296,6 +298,8 @@ h1 {
     background-color: rgb(255, 255, 255);
     width: 50%;
     min-width: 350px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .ppm-form, .ppm-form2 {
@@ -562,5 +566,143 @@ textarea {
 
 
 
+/* changes */
+
+    .form-subheading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .form-subheading h2 {
+        min-width: fit-content;
+        color: var(--black);
+    }
+
+    .form-subheading .fs-line {
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+    }
 
 
+    .form-input-sec {
+        margin: 30px 0 0 0;
+        min-width: 100%;
+    }
+    .section-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+        min-width: 100%;
+    }
+
+    .section-container .manipulation-btns {
+        display: flex;
+        gap: 15px;
+    }
+    .section-container .manipulation-btns span{
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        padding: 10px 20px;
+       font-size: 1rem;
+       font-weight: 600;
+       border-radius: 10px;
+       cursor: pointer;
+    }
+    .section-container .manipulation-btns span:nth-of-type(1){
+        background-color: green;
+    }
+    .section-container .manipulation-btns span{
+        background-color: red; 
+    }
+
+    .file-section {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid var(--black);
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .file-section p {
+        min-width: fit-content;
+        color: var(--black);
+    }
+
+    .file-section input {
+        border: none;
+        margin: 0;
+    }
+
+    .form-btns {
+        display: flex;
+        gap: 30px;
+    }
+    .form-btns button:nth-of-type(1) {
+        color: var(--white);
+        background-color: red;
+        border-color: red;
+    }
+    .form-btns button:nth-of-type(2) {
+        color: var(--white);
+        background-color: var(--black);
+    }
+
+    .delete-modal-bg {
+        display: none;
+    }
+
+    .delete-modal-bg.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+        height: 300px;
+        padding: 20px;
+        gap: 50px;
+        background-color: var(--black);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0 10px 5px rgb(39, 39, 39);
+        text-align: center;
+    }
+
+    .dm-btns{
+       display: flex;
+       align-items: center;
+       gap: 50px;
+    }
+
+    .dm-btns span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        border: 2px solid;
+        cursor: pointer;
+    }
+    .dm-btns span:nth-of-type(1) {
+        border-color: red;
+        color: red;
+    }
+
+/* changes end */
+
+
+.portfolio-select {
+    margin: 0 auto 0 0;
+    height: 40px;
+    margin-bottom: 40px;
+    border: 2px solid black;
+    padding: 0 20px;
+}
