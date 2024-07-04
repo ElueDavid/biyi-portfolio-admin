@@ -65,6 +65,7 @@ const removeFileSection = () => {
           </div>
           <div onClick={() => handleNavigate('Lightpages')}>Light Pages</div>
           <div className='sidebar-indicator' onClick={() => handleNavigate('Products')}>Products</div>
+          <div onClick={() => handleNavigate('Clients')}>Clients</div>
         </section>
       </div>
       <main>

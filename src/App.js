@@ -6,6 +6,7 @@ import Lightpages from './pages/Lightpages';
 import Products from './pages/Products';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Createaccount from './pages/Createaccount';
+import Clients from './pages/Clients';
 
 // product categories
 
@@ -27,7 +28,8 @@ function App() {
           <Route path='/Portfoliopage' element={<Portfoliopage />} /> 
           <Route path='/Lightpages' element={<Lightpages/>}/>
           <Route path='/Products' element={<Products/>}/>
-
+          <Route path='/Clients' element={<Clients/>}/>
+          
           {/* product categories */}
 
           <Route path='/Allproducts' element={<Allproducts/>}/>

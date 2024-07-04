@@ -59,6 +59,7 @@ export default function Portfoliopage() {
           </div>
           <div onClick={() => handleNavigate('Lightpages')}>Light Pages</div>
           <div onClick={() => handleNavigate('Products')}>Products</div>
+          <div onClick={() => handleNavigate('Clients')}>Clients</div>
         </section>
       </div>
       <main>
