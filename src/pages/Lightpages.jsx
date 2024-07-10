@@ -87,6 +87,7 @@ const [isActivedel, setIsActivedel] = useState(false);
                   <p>Upload visual Cover</p>
                   <input type="file" />
                 </div>
+                <input type="text" placeholder='Enter content' />
                 <input type="text" placeholder='Alt text'/>
               </section>
               <div className="form-subheading">

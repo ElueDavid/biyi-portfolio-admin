@@ -140,7 +140,6 @@ const removeFileSection = () => {
                           <p>Upload image</p>
                           <input type="file" />
                         </div>
-                        <input type="text" placeholder='Sub title'/>
                         <input type="text" placeholder='Content'/>
                     </div>
                   ))}

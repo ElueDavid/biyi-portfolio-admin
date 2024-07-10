@@ -166,18 +166,30 @@ export default function Portfoliopage() {
                 <div className='file-section'>
                   <p>Edit desktop inner banner</p>
                   <input type="file" />
+                  <span className="del-iv">
+                    Delete
+                  </span>
                 </div>
                 <div className='file-section'>
                   <p>Edit desktop inner visual 1</p>
                   <input type="file" />
+                  <span className="del-iv">
+                    Delete
+                  </span>
                 </div>
                 <div className='file-section'>
                   <p>Edit desktop inner visual 2</p>
                   <input type="file" />
+                  <span className="del-iv">
+                    Delete
+                  </span>
                 </div>
                 <div className='file-section'>
                   <p>Edit desktop inner visual 3</p>
                   <input type="file" />
+                  <span className="del-iv">
+                    Delete
+                  </span>
                 </div>
                 <input type="text" placeholder='Edit content'/>
                 <input type="text" placeholder='Edit Alt text'/>
