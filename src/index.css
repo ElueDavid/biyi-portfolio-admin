@@ -67,12 +67,26 @@ body{
     border: 2px solid grey;
     outline: none;
     text-indent: 10px;
-    margin-bottom: 10px;
     background-color: transparent;
     color: var(--white);
 }
 .admin_login_form input::placeholder {
     color: rgb(180, 180, 180);
+}
+
+.admin_login_form .pass-space {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 0 20px 0 0;
+    margin-top: 20px;
+}
+.admin_login_form .pass-space input{
+    border: 0;
+    width: 100%;
 }
 
 .admin_login_form button {
@@ -618,7 +632,8 @@ textarea {
        cursor: pointer;
     }
     .section-container .manipulation-btns span:nth-of-type(1){
-        background-color: green;
+        background-color: black;
+        color: white;
     }
     .section-container .manipulation-btns span{
         background-color: red; 
@@ -647,12 +662,12 @@ textarea {
         gap: 30px;
     }
     .form-btns button:nth-of-type(1) {
-        color: var(--white);
-        background-color: red;
-        border-color: red;
+        color: black;
+        background-color: white;
+        border-color: black;
     }
     .form-btns button:nth-of-type(2) {
-        color: var(--white);
+        color: gold;
         background-color: var(--black);
     }
 
@@ -697,6 +712,10 @@ textarea {
     .dm-btns span:nth-of-type(1) {
         border-color: red;
         color: red;
+    }
+    .dm-btns span:nth-of-type(2) {
+        border-color: gold;
+        color: gold;
     }
 
 /* changes end */
@@ -856,3 +875,60 @@ table tr td:nth-of-type(1) {
     border-radius: 10px;
     cursor: pointer;
 }
+
+
+
+.close-btn-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgb(255, 240, 240);
+    color: red;
+    border: 2px solid red;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50px;
+    height: 50px;
+    z-index: 1000000;
+    border-radius: 50%;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+}
+
+
+/* media upload */
+
+.upload-banner-pic-space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.media-upload-box {
+    width: 500px;
+    height: fit-content;
+    max-width: 500px;
+    max-height: 300px;
+    border: 2px dashed #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .media-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .media-placeholder {
+    color: #aaa;
+  }
+
+/* media upload */
